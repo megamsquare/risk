@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import TokenList from './component/TokenList';
+import NoWallet from './component/NoWallet';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>RebaseToken Trading</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<TokenList />}></Route>
+          <Route path='/nowallet' element={<NoWallet />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
